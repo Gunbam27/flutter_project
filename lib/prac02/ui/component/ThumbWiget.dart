@@ -16,23 +16,19 @@ class ThumbList extends StatelessWidget {
       itemBuilder: (BuildContext context, int index) {
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: SizedBox(
-            width: double.infinity,
-            height: 200,
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    Image.network(
-                      thumbList[index].thumbImagePath,
-                      fit: BoxFit.contain,
-                    ),
-                    //SizedBox(height: 100,child: Image.network(thumbList[index].thumbImagePath,fit: BoxFit.cover,)),
-                  ],
-                ),
-                Row(),
-              ],
-            ),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  Image.network(
+                    thumbList[index].thumbImagePath,
+                    fit: BoxFit.cover,
+                  ),
+                  //SizedBox(height: 100,child: Image.network(thumbList[index].thumbImagePath,fit: BoxFit.cover,)),
+                ],
+              ),
+              Row(),
+            ],
           ),
         );
       },

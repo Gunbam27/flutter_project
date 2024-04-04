@@ -10,13 +10,11 @@ class HomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
-      //physics:AlwaysScrollableScrollPhysics(),
-      child: Column(
-        children: [
-          SizedBox(child: ThumbList(thumbList: ThumbRepository().getThumbList())),
-        ],
+        child: SizedBox(
+      height: 800,
+      child: ThumbList(
+        thumbList: ThumbRepository().getThumbList(),
       ),
-    );
+    ));
   }
 }
-
