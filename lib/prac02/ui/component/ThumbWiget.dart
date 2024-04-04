@@ -14,22 +14,62 @@ class ThumbList extends StatelessWidget {
       scrollDirection: Axis.vertical,
       itemCount: thumbList.length,
       itemBuilder: (BuildContext context, int index) {
-        return Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Column(
-            children: [
-              Row(
+        return Column(
+          children: [
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 8),
+              width: double.infinity,
+              child: Image.network(
+                thumbList[index].thumbImagePath,
+                fit: BoxFit.cover,
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 15),
+              child: Row(
                 children: [
-                  Image.network(
-                    thumbList[index].thumbImagePath,
-                    fit: BoxFit.cover,
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(50.0),
+                    child: Container(
+                      width: 45,
+                      child: Image(
+                        image: NetworkImage(thumbList[index].userImagePath),
+                      ),
+                    ),
                   ),
-                  //SizedBox(height: 100,child: Image.network(thumbList[index].thumbImagePath,fit: BoxFit.cover,)),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(
+                          width:MediaQuery.of(context).size.width * 0.8,
+                          child: Text(
+                            thumbList[index].title,
+                            style: TextStyle(color: Colors.white,fontSize: 16),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              thumbList[index].userName,
+                              style: TextStyle(color: Colors.white),
+                            ),
+                            SizedBox(width: 20,),
+                            Text(
+                              '조회수${thumbList[index].viewCount}',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
-              Row(),
-            ],
-          ),
+            ),
+          ],
         );
       },
     );
