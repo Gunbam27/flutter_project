@@ -14,18 +14,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
         useMaterial3: true,
         appBarTheme: AppBarTheme(
           foregroundColor: Color(0xff1D4D4F),
           backgroundColor: Color(0xffffffff),
         ),
         textTheme: TextTheme(
-          displayLarge: const TextStyle(
-            color: Color(0xff1D4D4F),
-          ),
+          // displayLarge: const TextStyle(
+          //   color: Color(0xff1D4D4F),
+          // ),
         ),
-        scaffoldBackgroundColor: Color(0xffF7F8FA),
+        scaffoldBackgroundColor: Color(0xffFFFFFF),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
           selectedItemColor: Color(0xff4AA366),
           unselectedItemColor: Color(0xff6F8094),
