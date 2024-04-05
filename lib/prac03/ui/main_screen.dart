@@ -8,6 +8,15 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(
+          Icons.add,
+          size: 30,
+          color: Color(0xffFFFFFF),
+        ),
+        elevation: 8,
+      ),
       appBar: AppBar(
         title: Text(
           'Starbucks',
@@ -153,7 +162,6 @@ class MainScreen extends StatelessWidget {
             topRight: Radius.circular(30.0),
           ),
           child: BottomNavigationBar(
-            landscapeLayout: BottomNavigationBarLandscapeLayout.linear,
             type: BottomNavigationBarType.fixed,
             items: [
               BottomNavigationBarItem(
