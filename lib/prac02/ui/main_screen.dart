@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_project/prac02/ui/tabs/home_tab.dart';
+import 'package:flutter_project/prac02/ui/tabs/shorts_tab.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
@@ -14,8 +15,12 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   static const List<Widget> _tabs = <Widget>[
     HomeTab(),
+    ShortsTab(),
     Text(
-      'Index 1: Business',
+      'Index 2: School',
+    ),
+    Text(
+      'Index 2: School',
     ),
     Text(
       'Index 2: School',
@@ -36,7 +41,7 @@ class _MainScreenState extends State<MainScreen> {
         leadingWidth: 140,
         backgroundColor: Color(0xff000000),
         leading: Padding(
-          padding: const EdgeInsets.only(left:8.0),
+          padding: const EdgeInsets.only(left: 8.0),
           child: InkWell(
             onTap: () {},
             splashColor: Colors.black.withOpacity(0.2),
@@ -56,7 +61,7 @@ class _MainScreenState extends State<MainScreen> {
             onPressed: () {},
             icon: Icon(
               Icons.sensors_rounded,
-              size: 28,
+              size: 24,
               color: Colors.white70,
             ),
           ),
@@ -64,7 +69,7 @@ class _MainScreenState extends State<MainScreen> {
             onPressed: () {},
             icon: Icon(
               Icons.notifications_none_rounded,
-              size: 28,
+              size: 24,
               color: Colors.white70,
             ),
           ),
@@ -72,7 +77,7 @@ class _MainScreenState extends State<MainScreen> {
             onPressed: () {},
             icon: Icon(
               Icons.search_rounded,
-              size: 28,
+              size: 24,
               color: Colors.white70,
             ),
           ),
@@ -98,19 +103,36 @@ class _MainScreenState extends State<MainScreen> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Home',
+            label: '홈',
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Icon(Icons.flash_on_rounded),
+            label: 'Shorts',
+            backgroundColor: Colors.black,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.add_circle_outline_rounded,size: 40,),
+            label: '',
+            backgroundColor: Colors.black,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.play_circle_outline_rounded),
+            label: '구독',
+            backgroundColor: Colors.black,
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.add_to_photos_rounded),
+            label: '보관함',
+            backgroundColor: Colors.black,
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white70,
+        backgroundColor: Colors.black,
+        showUnselectedLabels:true,
+        type: BottomNavigationBarType.fixed,
         onTap: _onItemTapped,
       ),
     );

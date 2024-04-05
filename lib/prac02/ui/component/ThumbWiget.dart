@@ -42,19 +42,27 @@ class ThumbList extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
-                          width:MediaQuery.of(context).size.width * 0.8,
-                          child: Text(
-                            thumbList[index].title,
-                            style: TextStyle(color: Colors.white,fontSize: 16),
-                            overflow: TextOverflow.ellipsis,
-                          ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width:MediaQuery.of(context).size.width * 0.7,
+                              child: Text(
+                                thumbList[index].title,
+                                style: TextStyle(color: Colors.white,fontSize: 16),
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ],
                         ),
                         Row(
                           children: [
-                            Text(
-                              thumbList[index].userName,
-                              style: TextStyle(color: Colors.white),
+                            SizedBox(
+                              width: 100,
+                              child: Text(
+                                thumbList[index].userName,
+                                style: TextStyle(color: Colors.white),
+                                overflow: TextOverflow.ellipsis,
+                              ),
                             ),
                             SizedBox(width: 20,),
                             Text(
