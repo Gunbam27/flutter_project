@@ -43,9 +43,10 @@ class MainScreen extends StatelessWidget {
         slivers: [
           SliverAppBar(
             backgroundColor: Color(0xffF7F8FA),
-            toolbarHeight: 425,
-            expandedHeight: 425,
+            toolbarHeight: 440,
+            expandedHeight: 440,
             flexibleSpace: HomeReward(),
+            
           ),
           SliverToBoxAdapter(
             child: Container(

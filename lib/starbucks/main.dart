@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/prac03/ui/main_screen.dart';
+import 'package:flutter_project/starbucks/ui/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
