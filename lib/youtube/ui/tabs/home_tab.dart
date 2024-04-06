@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/prac02/ui/component/ThumbWiget.dart';
+import 'package:flutter_project/youtube/ui/component/ThumbWiget.dart';
 
 import '../../repository/thumbRepository.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_project/prac02/ui/tabs/home_tab.dart';
-import 'package:flutter_project/prac02/ui/tabs/shorts_tab.dart';
+import 'package:flutter_project/youtube/ui/tabs/home_tab.dart';
+import 'package:flutter_project/youtube/ui/tabs/shorts_tab.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});

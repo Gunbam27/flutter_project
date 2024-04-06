@@ -1,4 +1,4 @@
-import 'package:flutter_project/prac02/data/model/shorts.dart';
+import 'package:flutter_project/youtube/data/model/shorts.dart';
 
 class ShortsRepository{
   List<ShortsModel> getShortsList(){

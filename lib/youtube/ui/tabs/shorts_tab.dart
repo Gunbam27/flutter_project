@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/prac02/ui/component/ShortsWiget.dart';
+import 'package:flutter_project/youtube/ui/component/ShortsWiget.dart';
 
 import '../../repository/shortsRepository.dart';
 

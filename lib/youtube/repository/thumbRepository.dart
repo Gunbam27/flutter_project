@@ -1,4 +1,4 @@
-import 'package:flutter_project/prac02/data/model/thumb.dart';
+import 'package:flutter_project/youtube/data/model/thumb.dart';
 
 class ThumbRepository{
   List<ThumbModel> getThumbList(){
