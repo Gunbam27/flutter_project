@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import '../../data/model/thumb.dart';
 
 class ThumbList extends StatelessWidget {
@@ -17,7 +15,7 @@ class ThumbList extends StatelessWidget {
         return Column(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               width: double.infinity,
               child: Image.network(
                 thumbList[index].thumbImagePath,
@@ -30,7 +28,7 @@ class ThumbList extends StatelessWidget {
                 children: [
                   ClipRRect(
                     borderRadius: BorderRadius.circular(50.0),
-                    child: Container(
+                    child: SizedBox(
                       width: 45,
                       child: Image(
                         image: NetworkImage(thumbList[index].userImagePath),
@@ -48,7 +46,7 @@ class ThumbList extends StatelessWidget {
                               width:MediaQuery.of(context).size.width * 0.7,
                               child: Text(
                                 thumbList[index].title,
-                                style: TextStyle(color: Colors.white,fontSize: 16),
+                                style: const TextStyle(color: Colors.white,fontSize: 16),
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
@@ -60,14 +58,14 @@ class ThumbList extends StatelessWidget {
                               width: 100,
                               child: Text(
                                 thumbList[index].userName,
-                                style: TextStyle(color: Colors.white),
+                                style: const TextStyle(color: Colors.white),
                                 overflow: TextOverflow.ellipsis,
                               ),
                             ),
-                            SizedBox(width: 20,),
+                            const SizedBox(width: 20,),
                             Text(
                               '조회수${thumbList[index].viewCount}',
-                              style: TextStyle(color: Colors.white),
+                              style: const TextStyle(color: Colors.white),
                             ),
                           ],
                         ),

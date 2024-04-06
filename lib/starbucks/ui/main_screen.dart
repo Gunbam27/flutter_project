@@ -10,29 +10,29 @@ class MainScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
-        child: Icon(
+        elevation: 8,
+        child: const Icon(
           Icons.add,
           size: 30,
           color: Color(0xffFFFFFF),
         ),
-        elevation: 8,
       ),
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Starbucks',
           style: TextStyle(fontSize: 24, fontWeight: FontWeight.w800),
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.notifications_none_rounded,
               size: 30,
             ),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.more_vert_rounded,
               size: 30,
             ),
@@ -41,7 +41,7 @@ class MainScreen extends StatelessWidget {
       ),
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
+          const SliverAppBar(
             backgroundColor: Color(0xffF7F8FA),
             toolbarHeight: 440,
             expandedHeight: 440,
@@ -50,18 +50,18 @@ class MainScreen extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: Container(
-              color: Color(0xffffF7F8FA),
+              color: const Color(0xfffff7f8fa),
               height: 20,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   Container(
                     height: 20,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Color(0xffffffff),
                       borderRadius: BorderRadius.only(
-                        topLeft: const Radius.circular(30.0),
-                        topRight: const Radius.circular(30.0),
+                        topLeft: Radius.circular(30.0),
+                        topRight: Radius.circular(30.0),
                       ),
                     ),
                   ),
@@ -75,7 +75,7 @@ class MainScreen extends StatelessWidget {
               childCount: 1,
               (BuildContext context, int index) {
                 return Container(
-                  padding: EdgeInsets.symmetric(horizontal: 18),
+                  padding: const EdgeInsets.symmetric(horizontal: 18),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -84,15 +84,15 @@ class MainScreen extends StatelessWidget {
                           width: 82,
                           height: 6,
                           decoration: BoxDecoration(
-                            color: Color(0xffDFE4EC),
+                            color: const Color(0xffDFE4EC),
                             borderRadius: BorderRadius.circular(20),
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 23,
                       ),
-                      Text(
+                      const Text(
                         'Promotion',
                         style: TextStyle(
                           fontSize: 20,
@@ -100,10 +100,10 @@ class MainScreen extends StatelessWidget {
                           color: Color(0xff2E2D38),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      ClipRRect(
+                      const ClipRRect(
                         borderRadius: BorderRadius.all(
                           Radius.circular(20.0),
                         ),
@@ -111,16 +111,16 @@ class MainScreen extends StatelessWidget {
                           image: AssetImage('assets/image/promotion01.jpeg'),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      Image(
+                      const Image(
                         image: AssetImage('assets/image/promotion02.png'),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
-                      Text(
+                      const Text(
                         'Lorem ipsum',
                         style: TextStyle(
                           fontSize: 20,
@@ -128,10 +128,10 @@ class MainScreen extends StatelessWidget {
                           color: Color(0xff2E2D38),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 9,
                       ),
-                      Text(
+                      const Text(
                           style: TextStyle(
                             fontSize: 16,
                           ),
@@ -146,7 +146,7 @@ class MainScreen extends StatelessWidget {
         ],
       ),
       bottomNavigationBar: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           boxShadow: <BoxShadow>[
             // 그림자효과
             BoxShadow(
@@ -158,13 +158,13 @@ class MainScreen extends StatelessWidget {
           ],
         ),
         child: ClipRRect(
-          borderRadius: BorderRadius.only(
+          borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(30.0),
             topRight: Radius.circular(30.0),
           ),
           child: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
-            items: [
+            items: const [
               BottomNavigationBarItem(
                 label: 'star',
                 icon: Icon(
@@ -211,21 +211,21 @@ class HomeReward extends StatelessWidget {
         Stack(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(vertical: 17),
-              child: Image(
+              padding: const EdgeInsets.symmetric(vertical: 17),
+              child: const Image(
                 image: AssetImage('assets/image/moneycard.png'),
               ),
             ),
             Positioned(
               left: 40,
               top: 110,
-              child: Container(
+              child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.75,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Column(
+                    const Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
@@ -245,7 +245,7 @@ class HomeReward extends StatelessWidget {
                     ),
                     TextButton(
                         onPressed: () {},
-                        child: Text(
+                        child: const Text(
                           '내용 보기 →',
                           style: TextStyle(
                             fontSize: 15,
@@ -261,7 +261,7 @@ class HomeReward extends StatelessWidget {
         ),
         Row(
           children: [
-            Image(
+            const Image(
               image: AssetImage('assets/image/chart.png'),
               width: 170,
             ),
@@ -272,26 +272,26 @@ class HomeReward extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.star,
                         size: 32,
                       ),
-                      color: Color(0xffC1A063),
+                      color: const Color(0xffC1A063),
                     ),
-                    Text(
+                    const Text(
                       '0',
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
                     )
                   ],
                 ),
-                Text(
+                const Text(
                   'Star Reward',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                 )
               ],
             ),
-            SizedBox(
+            const SizedBox(
               width: 28,
             ),
             Column(
@@ -301,20 +301,20 @@ class HomeReward extends StatelessWidget {
                   children: [
                     IconButton(
                       onPressed: () {},
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.card_membership,
                         size: 32,
                       ),
-                      color: Color(0xff1D4D4F),
+                      color: const Color(0xff1D4D4F),
                     ),
-                    Text(
+                    const Text(
                       '2',
                       style:
                           TextStyle(fontSize: 30, fontWeight: FontWeight.w900),
                     )
                   ],
                 ),
-                Text(
+                const Text(
                   'Coupon',
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
                 )

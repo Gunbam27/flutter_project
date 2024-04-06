@@ -1,8 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_project/youtube/data/model/shorts.dart';
-import '../../data/model/thumb.dart';
 
 class ShortsList extends StatelessWidget {
   final List<ShortsModel> shortsList;
@@ -13,7 +10,7 @@ class ShortsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView.builder(
       scrollDirection: Axis.vertical,
-      physics: PageScrollPhysics(),
+      physics: const PageScrollPhysics(),
       itemCount: shortsList.length,
       itemBuilder: (BuildContext context, int index) {
         return Column(
@@ -21,7 +18,7 @@ class ShortsList extends StatelessWidget {
             Stack(
               children: [
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                   width: double.infinity,
                   height: MediaQuery.of(context).size.height * 0.8,
                   child: ClipRRect(
@@ -38,7 +35,7 @@ class ShortsList extends StatelessWidget {
                 Positioned(
                   bottom: 70,
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       children: [
                         Column(
@@ -48,7 +45,7 @@ class ShortsList extends StatelessWidget {
                               children: [
                                 ClipRRect(
                                   child: Container(
-                                    padding: EdgeInsets.all(8),
+                                    padding: const EdgeInsets.all(8),
                                     child: ClipRRect(
                                       borderRadius: BorderRadius.circular(50.0),
                                       child: Image.network(
@@ -63,7 +60,7 @@ class ShortsList extends StatelessWidget {
                                       MediaQuery.of(context).size.width * 0.7,
                                   child: Text(
                                     shortsList[index].userName,
-                                    style: TextStyle(
+                                    style: const TextStyle(
                                         color: Colors.white, fontSize: 16),
                                     overflow: TextOverflow.ellipsis,
                                   ),
@@ -73,7 +70,7 @@ class ShortsList extends StatelessWidget {
                             SizedBox(
                               child: Text(
                                 shortsList[index].title,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 18,
                                     fontWeight: FontWeight.w700),
@@ -95,7 +92,7 @@ class ShortsList extends StatelessWidget {
                           children: [
                             IconButton(
                               onPressed: () {},
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.thumb_up_off_alt_rounded,
                                 color: Colors.white,
                                 size: 30,
@@ -103,37 +100,37 @@ class ShortsList extends StatelessWidget {
                             ),
                             Text(
                               shortsList[index].likes,
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: Colors.white,
                                   fontSize: 16,
                                   fontWeight: FontWeight.w600),
                             )
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.thumb_down_off_alt_rounded,
                             color: Colors.white,
                             size: 30,
                           ),
                         ),
-                        Text(
+                        const Text(
                           '싫어요',
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 14,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.rate_review_outlined,
                             color: Colors.white,
                             size: 30,
@@ -141,23 +138,23 @@ class ShortsList extends StatelessWidget {
                         ),
                         Text(
                           shortsList[index].reviews,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.white,
                               fontSize: 14,
                               fontWeight: FontWeight.w500),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
                         IconButton(
                           onPressed: () {},
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.share_rounded,
                             color: Colors.white,
                             size: 30,
                           ),
                         ),
-                        Text(
+                        const Text(
                           '공유',
                           style: TextStyle(
                               color: Colors.white,

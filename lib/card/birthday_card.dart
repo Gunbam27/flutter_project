@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 
 void main() {
@@ -31,9 +29,9 @@ class BirthdayScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffE7BDB6),
+      backgroundColor: const Color(0xffE7BDB6),
       body: Container(
-        child: Stack(
+        child: const Stack(
           fit: StackFit.expand,
           children: [
             Positioned(
@@ -59,7 +57,7 @@ class Background extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           //image: NetworkImage(
           //    "https://img.freepik.com/free-photo/pastel-plastic-texture-background-holographic-gradient_53876-106193.jpg?t=st=1712133865~exp=1712137465~hmac=4ade3895f333230cfcdcbaf016d0c62647c5da8b46287b202655557579bd01be&w=740"),
@@ -76,7 +74,7 @@ class BirthdayText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Center(
@@ -104,6 +102,8 @@ class BirthdayText extends StatelessWidget {
 }
 
 class LottieTest extends StatefulWidget {
+  const LottieTest({super.key});
+
   @override
   _LottieTestState createState() => _LottieTestState();
 }

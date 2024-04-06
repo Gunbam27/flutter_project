@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:lottie/lottie.dart';
 
 void main() {
@@ -31,13 +29,13 @@ class BusinessScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffffffff),
+      backgroundColor: const Color(0xffffffff),
       body: Container(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Background(),
+            const Background(),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               child: Row(
@@ -45,15 +43,15 @@ class BusinessScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Transform.translate(
-                      offset: Offset(0, -70),
-                      child: Column(
+                      offset: const Offset(0, -70),
+                      child: const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           ProfileImage(),
                           ProfileText(),
                         ],
                       )),
-                  Icon(Icons.edit),
+                  const Icon(Icons.edit),
                 ],
               ),
             ),
@@ -72,7 +70,7 @@ class Background extends StatelessWidget {
     return Container(
       width: double.infinity,
       height: 200,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         image: DecorationImage(
           image: NetworkImage(
               "https://cdn.imweb.me/upload/S20210406ae69853331cfb/d24b50c47fb2e.jpg"),
@@ -88,7 +86,7 @@ class ProfileImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CircleAvatar(
+    return const CircleAvatar(
       backgroundColor: Colors.white,
       radius: 64,
       child: CircleAvatar(
@@ -103,7 +101,7 @@ class ProfileText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
+      child: const Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -140,6 +138,8 @@ class ProfileText extends StatelessWidget {
 }
 
 class LottieTest extends StatefulWidget {
+  const LottieTest({super.key});
+
   @override
   _LottieTestState createState() => _LottieTestState();
 }

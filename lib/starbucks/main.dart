@@ -16,29 +16,29 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.white),
           useMaterial3: true,
-          appBarTheme: AppBarTheme(
+          appBarTheme: const AppBarTheme(
             foregroundColor: Color(0xff1D4D4F),
             backgroundColor: Color(0xffffffff),
             surfaceTintColor: Color(0xffffffff),
           ),
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
               // displayLarge: const TextStyle(
               //   color: Color(0xff1D4D4F),
               // ),
               ),
-          floatingActionButtonTheme: FloatingActionButtonThemeData(
+          floatingActionButtonTheme: const FloatingActionButtonThemeData(
             shape: CircleBorder(),
             backgroundColor: Color(0xff4AA366),
           ),
-          scaffoldBackgroundColor: Color(0xffFFFFFF),
-          bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          scaffoldBackgroundColor: const Color(0xffFFFFFF),
+          bottomNavigationBarTheme: const BottomNavigationBarThemeData(
             selectedItemColor: Color(0xff4AA366),
             unselectedItemColor: Color(0xff6F8094),
             showSelectedLabels: false,
             showUnselectedLabels: false,
             backgroundColor: Color(0xffffffff),
           )),
-      home: MainScreen(),
+      home: const MainScreen(),
     );
   }
 }

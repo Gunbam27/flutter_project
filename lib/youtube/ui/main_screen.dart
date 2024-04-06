@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_project/youtube/ui/tabs/home_tab.dart';
 import 'package:flutter_project/youtube/ui/tabs/shorts_tab.dart';
 
@@ -36,10 +34,10 @@ class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff000000),
+      backgroundColor: const Color(0xff000000),
       appBar: AppBar(
         leadingWidth: 140,
-        backgroundColor: Color(0xff000000),
+        backgroundColor: const Color(0xff000000),
         leading: Padding(
           padding: const EdgeInsets.only(left: 8.0),
           child: InkWell(
@@ -47,7 +45,7 @@ class _MainScreenState extends State<MainScreen> {
             splashColor: Colors.black.withOpacity(0.2),
             child: Ink(
               width: 100,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage('assets/image/youtube.png'),
                   fit: BoxFit.contain,
@@ -59,7 +57,7 @@ class _MainScreenState extends State<MainScreen> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.sensors_rounded,
               size: 24,
               color: Colors.white70,
@@ -67,7 +65,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.notifications_none_rounded,
               size: 24,
               color: Colors.white70,
@@ -75,7 +73,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.search_rounded,
               size: 24,
               color: Colors.white70,
@@ -87,7 +85,7 @@ class _MainScreenState extends State<MainScreen> {
               onTap: () {},
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(50.0),
-                child: Container(
+                child: const SizedBox(
                   width: 35,
                   child: Image(
                     image: AssetImage('assets/image/profile.jpg'),

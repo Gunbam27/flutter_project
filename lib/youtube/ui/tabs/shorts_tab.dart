@@ -10,7 +10,7 @@ class ShortsTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        physics: PageScrollPhysics(),
+        physics: const PageScrollPhysics(),
         child: SizedBox(
           height: 800,
           child: ShortsList(
