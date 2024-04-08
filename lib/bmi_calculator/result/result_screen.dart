@@ -21,6 +21,14 @@ class _ResultScreenState extends State<ResultScreen> {
   void initState() {
     super.initState();
     widget.resultViewModel.calculate(widget.height, widget.weight);
+
+    ///widget.resultViewModel.addListener(() {widget.resultViewModel.calculate(widget.height, widget.weight);});
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
   }
 
   Widget _buildIcon(double bmi) {
