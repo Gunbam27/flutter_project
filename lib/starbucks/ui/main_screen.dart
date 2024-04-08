@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
@@ -46,7 +44,6 @@ class MainScreen extends StatelessWidget {
             toolbarHeight: 440,
             expandedHeight: 440,
             flexibleSpace: HomeReward(),
-            
           ),
           SliverToBoxAdapter(
             child: Container(
@@ -324,5 +321,19 @@ class HomeReward extends StatelessWidget {
         ),
       ],
     );
+  }
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }

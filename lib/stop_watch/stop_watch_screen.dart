@@ -12,10 +12,12 @@ class StopWatchScreen extends StatefulWidget {
 class _StopWatchScreenState extends State<StopWatchScreen> {
   Timer? _timer;
 
-  int _time = 0;
+  int _time = 5800;
   bool _isRunning = false;
 
-  List<String> _lapTimes = [];
+  List<int> _lapTimes = [];
+
+  //var _lapTimes2 = List.generate(_lapTimes.length, (i) => Text(i));
 
   void _clickButton() {
     _isRunning = !_isRunning;
@@ -28,7 +30,7 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
   }
 
   void _start() {
-    _timer = Timer.periodic(const Duration(milliseconds: 10), (timer) {
+    _timer = Timer.periodic(Duration(milliseconds: 10), (timer) {
       setState(() {
         _time++;
       });
@@ -46,8 +48,8 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
     _time = 0;
   }
 
-  void _recordLapTime(String time) {
-    _lapTimes.insert(0, '${_lapTimes.length + 1}등 $time');
+  void _recordLapTime(int _time) {
+    _lapTimes.insert(0, _time);
   }
 
   @override
@@ -56,10 +58,40 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
     super.dispose();
   }
 
+  Widget formatting() {
+    return ListView(
+      children: _lapTimes
+          .map(
+            (e) => Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text('${List.from(_lapTimes.reversed).indexOf(e) + 1}'
+                    .padLeft(2, '0'),style:TextStyle(fontSize:17)),
+                Text('${toMin(e)}:${toSec(e)}.${toMillisec(e)}',style:TextStyle(fontSize:17))
+              ],
+            ),
+          )
+          .toList(),
+    );
+  }
+
+  String toMin(int time) {
+    return '${(time ~/ 6000).remainder(60)}'.padLeft(2, '0');
+  }
+
+  String toSec(int time) {
+    return '${(time ~/ 100).remainder(60)}'.padLeft(2, '0');
+  }
+
+  String toMillisec(int time) {
+    return '${time % 100}'.padLeft(2, '0');
+  }
+
   @override
   Widget build(BuildContext context) {
-    int sec = _time ~/ 100;
-    String hundredth = '${_time % 100}'.padLeft(2, '0');
+    String min = '${(_time ~/ 6000).remainder(60)}'.padLeft(2, '0');
+    String sec = '${(_time ~/ 100).remainder(60)}'.padLeft(2, '0');
+    String millisec = '${(_time % 100)}'.padLeft(2, '0');
     return Scaffold(
       appBar: AppBar(
         title: const Text('StopWatch'),
@@ -74,25 +106,43 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                '$sec',
-                style: const TextStyle(fontSize: 50),
+                min,
+                style: TextStyle(fontSize: 50),
+              ),
+              const Text(
+                ':',
+                style: TextStyle(fontSize: 50),
               ),
               Text(
-                hundredth,
-                style: const TextStyle(fontSize: 30),
+                sec,
+                style: TextStyle(fontSize: 50),
+              ),
+              const Text(
+                '.',
+                style: TextStyle(fontSize: 50),
+              ),
+              Text(
+                millisec,
+                style: TextStyle(fontSize: 50),
               ),
             ],
           ),
+          SizedBox(height:40),
           Column(
             children: [
               SizedBox(
-                height: 400,
-                child: ListView(
-                  shrinkWrap: true,
-                  children: _lapTimes
-                      .map((time) => Text(time, textAlign: TextAlign.center))
-                      .toList(),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text('구간',style:TextStyle(fontSize:18,fontWeight:FontWeight.w600)),
+                    Text('전체 시간',style:TextStyle(fontSize:18,fontWeight:FontWeight.w600)),
+                  ],
                 ),
+              ),
+              SizedBox(height:20),
+              SizedBox(
+                height: 400,
+                child: formatting(),
               ),
             ],
           ),
@@ -121,7 +171,7 @@ class _StopWatchScreenState extends State<StopWatchScreen> {
               FloatingActionButton(
                 onPressed: () {
                   setState(() {
-                    _recordLapTime('$sec.$hundredth');
+                    _recordLapTime(_time);
                   });
                 },
                 child: const Icon(Icons.add),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/stop_watch/stop_watch_screen.dart';
+import 'package:flutter_project/my_web_brower/main_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: StopWatchScreen(),
+      home: MainScreen(),
     );
   }
 }
