@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/bmi_calculator/result/result_view_model.dart';
 
-class ResultScreen extends StatelessWidget {
+class ResultScreen extends StatefulWidget {
+  final ResultViewModel resultViewModel;
   final double height;
   final double weight;
 
-  const ResultScreen({super.key, required this.height, required this.weight});
+  const ResultScreen(
+      {super.key,
+      required this.height,
+      required this.weight,
+      required this.resultViewModel});
 
-  String _calcBmi(double bmi) {
-    String result = '저체중';
-    if (bmi >= 35) {
-      result = '고도 비만';
-    } else if (bmi >= 30) {
-      result = '2단계 비만';
-    } else if (bmi >= 25) {
-      result = '1단계 비만';
-    } else if (bmi >= 23) {
-      result = '과체중';
-    } else if (bmi >= 18.5) {
-      result = '정상';
-    }
-    return result;
+  @override
+  State<ResultScreen> createState() => _ResultScreenState();
+}
+
+class _ResultScreenState extends State<ResultScreen> {
+  @override
+  void initState() {
+    super.initState();
+    widget.resultViewModel.calculate(widget.height, widget.weight);
   }
 
   Widget _buildIcon(double bmi) {
@@ -47,8 +48,6 @@ class ResultScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bmi = weight / ((height / 100) * (height / 100));
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('결과'),
@@ -57,10 +56,10 @@ class ResultScreen extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              _calcBmi(bmi),
+              widget.resultViewModel.result,
               style: const TextStyle(fontSize: 36),
             ),
-            _buildIcon(bmi),
+            _buildIcon(widget.resultViewModel.bmi),
           ],
         ),
       ),
