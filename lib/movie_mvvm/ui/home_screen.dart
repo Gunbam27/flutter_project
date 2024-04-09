@@ -32,6 +32,12 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('무비서치'),
+        actions: [
+          TextButton(
+            onPressed: () => viewModel.fetchMovies(),
+            child: Text('새로고침'),
+          ),
+        ],
       ),
       body: Column(
         children: [
@@ -51,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               ElevatedButton(
-                onPressed: () => viewModel.searchByName(_searchController.text),
+                onPressed: () => viewModel.onSearchUser(_searchController.text),
                 child: const Text('검색하기'),
               ),
             ],
@@ -79,7 +85,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             fit: BoxFit.fitHeight,
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(e.title),

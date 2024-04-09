@@ -15,12 +15,13 @@ class HomeViewModel with ChangeNotifier {
     notifyListeners();
   }
 
-  void searchByName(searchTitle) async {
+  void onSearchUser(searchTitle) async {
     _movieList = await _movieRepositoryImpl.getMovieInfoList();
-    _movieList.map((e) => e.title.contains('$searchTitle')).toList();
     print(searchTitle);
     _movieList = _movieList
         .where((element) => element.title.contains('$searchTitle'))
         .toList();
+    print(_movieList);
+    notifyListeners();
   }
 }
