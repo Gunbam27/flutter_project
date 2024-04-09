@@ -48,6 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: SizedBox(
                   width: 280,
                   child: TextFormField(
+                    onChanged: (value) {
+                      viewModel.onSearchUser(_searchController.text);
+                    },
                     controller: _searchController,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
