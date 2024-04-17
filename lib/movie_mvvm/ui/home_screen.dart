@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/movie_mvvm/home_view_model.dart';
+import 'package:flutter_project/movie_mvvm/ui/home_view_model.dart';
 
 class HomeScreen extends StatefulWidget {
   final HomeViewModel viewModel;

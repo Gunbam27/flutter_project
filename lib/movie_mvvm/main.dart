@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/movie_mvvm/data_source/repository/movie_repository_impl.dart';
-import 'package:flutter_project/movie_mvvm/home_view_model.dart';
 import 'package:flutter_project/movie_mvvm/ui/home_screen.dart';
+import 'package:flutter_project/movie_mvvm/ui/home_view_model.dart';
 
 void main() {
   runApp(const MyApp());
