@@ -43,6 +43,8 @@ dependencies:
   provider: ^6.1.2
   image_picker: ^1.0.8
   collection: ^1.18.0
+  google_generative_ai: ^0.3.2
+  flutter_dotenv: ^5.1.0
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +70,7 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   assets:
+    - .env
     - assets/image/
     - assets/lottie/
   uses-material-design: true
